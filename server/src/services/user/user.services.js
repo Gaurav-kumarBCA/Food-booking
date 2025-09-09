@@ -1,0 +1,14 @@
+const User=require("../../models/user")
+
+const registerUserDB=async({name,email,password,phone})=>{
+    const newuser= new User({name,email,password,phone});
+     await newuser.save();
+     return newuser;
+};
+
+const finduserDB=async(email)=>{
+    const user= await User.findOne({email});
+        return user;
+}
+
+module.exports={registerUserDB,finduserDB}
