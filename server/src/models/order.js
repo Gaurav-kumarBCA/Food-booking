@@ -6,7 +6,7 @@ const orderSchema=new mongoose.Schema({
     items:[
         {
             food:{type:mongoose.Schema.Types.ObjectId,ref:"FoodItems"},
-            qunatity:Number
+            qunatity:{type:Number,required:true},
         }
     ],
     deliveryAddress:{type:mongoose.Schema.Types.ObjectId,ref:"Address",required:true},
@@ -16,7 +16,7 @@ const orderSchema=new mongoose.Schema({
         default:"panding",
         enum:["pending","confirmed","preparing","out-of--delivery","delivered","pending"],
     },
-    paymentMethod:{type:String,enum:["COD","Online"],default:"COD"},
+    paymentMethod:{type:String,enum:["COD","Online"],default:"COD",required:true},
     paymentStatus:{type:String,enum:["pending","paid","failed"],default:"pending"},
     deliveryPartner:{type:mongoose.Schema.Types.ObjectId,ref:"DeliveryBoy"},
     payment:{type:mongoose.Schema.Types.ObjectId,ref:"Payment"},
