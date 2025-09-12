@@ -5,7 +5,7 @@ const router=express.Router();
 
 router.post("/",createRestaurant);
 router.get("/",getAllRestaurant);
-router.get("/:id",getRestaurantById);
+router.get("/:slug",getRestaurantById);
 router.put("/:id",updateRestaurant);
 router.delete("/:id",deleteRestaurant);
 

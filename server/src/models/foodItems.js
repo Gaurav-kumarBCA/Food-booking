@@ -11,6 +11,6 @@ const foodItemsList=new mongoose.Schema({
     imageUrl:String,
 },{timestamps:true});
 
-const FoodItems=mongoose.model("FoodItrms",foodItemsList);
+const FoodItems=mongoose.model("FoodItems",foodItemsList);
 
 module.exports=FoodItems;

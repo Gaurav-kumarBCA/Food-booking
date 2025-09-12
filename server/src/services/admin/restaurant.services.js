@@ -13,11 +13,13 @@ const getAllRestaurantDB=async()=>{
 
 }
 
-const getRestaurantByIdDB=async(id)=>{
-    return await Restaurant.findById(id).populate({
+const getRestaurantByIdDB=async(slug)=>{
+    return await Restaurant.findOne({slug:slug}).populate({
         path:"owner",
         select:"name email phone"
-    });;
+    }).populate({
+        path:"menu.foodList"
+    });
 }
 
 const updateRestaurantDB=async(id,body)=>{

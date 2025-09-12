@@ -1,9 +1,13 @@
 const { createRestaurantDB, getAllRestaurantDB, getRestaurantByIdDB, updateRestaurantDB, deleteRestaurantDB } = require("../../services/admin/restaurant.services");
+const { generateSlug } = require("../../utils");
 
 
 const createRestaurant=async(req,res)=>{
     try {
     const body=req.body;
+    if(body.name){
+        body.slug=generateSlug(body.name)
+    }
     const data= await createRestaurantDB(body);
         return res.json({
             success:true,
@@ -38,8 +42,8 @@ const getAllRestaurant=async(req,res)=>{
 
 const getRestaurantById=async(req,res)=>{
     try {
-        const {id}=req.params;
-        const data=await getRestaurantByIdDB(id);
+        const {slug}=req.params;
+        const data=await getRestaurantByIdDB(slug);
         return res.json({
             success:true,
             data:data

@@ -13,7 +13,7 @@ const restaurantSchema=new mongoose.Schema({
         pincode:String,
     },
     menu:[{
-        type: mongoose.Schema.Types.ObjectId,ref:"Food"
+       foodList: {type: mongoose.Schema.Types.ObjectId,ref:"FoodItems", required:true}
     }],
     rating:{type:Number,default:0},
 },
