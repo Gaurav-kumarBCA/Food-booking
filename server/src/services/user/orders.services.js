@@ -2,8 +2,8 @@ const Order = require("../../models/order");
 
 
 const orderCreatedDB=async(data)=>{
-    const order=await Order.create(data);
-    return order;
+    const order=new Order(data);
+    return await order.save();
 }
 
 const getAllOrdersDB=async()=>{
