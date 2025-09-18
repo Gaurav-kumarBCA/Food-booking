@@ -11,7 +11,7 @@ const createFoodList=async(req,res)=>{
         return res.json({
             success:true,
             message:"Food Item Created",
-            data:data
+            data:data 
         });
     } catch (error) {
         console.log(error);

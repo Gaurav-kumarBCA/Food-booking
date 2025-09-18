@@ -4,7 +4,7 @@ const {createAddress,getAllAddress,updateAddressByID,deleteAddressByID}=require(
 
 const router=express.Router();
 router.post("/",createAddress);
-router.get("/",getAllAddress);
+router.get("/:id",getAllAddress);
 router.put("/:id",updateAddressByID);
 router.delete("/:id",deleteAddressByID);
 

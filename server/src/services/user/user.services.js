@@ -1,7 +1,7 @@
 const User=require("../../models/user")
 
-const registerUserDB=async({name,email,password,phone})=>{
-    const newuser= new User({name,email,password,phone});
+const registerUserDB=async({name,email,password,phone,role})=>{
+    const newuser= new User({name,email,password,phone,role:role||"user"});
      await newuser.save();
      return newuser;
 };

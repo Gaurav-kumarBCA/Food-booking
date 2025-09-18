@@ -26,6 +26,12 @@ const deliveryboyCreated=async(req,res)=>{
         })
        } catch (error) {
         console.log(error);
+         if(error.code===11000){
+            return res.json({
+                success:false,
+                error:"A Delivery Boy already exists"
+            })
+        }
         return res.json({
             success:false,
             error:"somthing went wrong"

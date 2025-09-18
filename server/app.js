@@ -6,6 +6,7 @@ const authRoutes=require("./src/routes/auth.routers");
 const user=require("./src/routes/user/index");
 const deliveryBoyRoutes=require("./src/routes/delivery/delivery.routers")
 const adminRoutres=require("./src/routes/admin/index");
+const verifyToken=require("./src/middleware/auth.middleware");
 connectDB();
 
 
@@ -19,6 +20,8 @@ app.get("/",(req,res)=>{
 });
 
 app.use("/auth",authRoutes);
+
+app.use(verifyToken);
 
 app.use("/user",user);
 

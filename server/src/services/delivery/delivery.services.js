@@ -2,7 +2,7 @@ const DeliveryBoy=require("../../models/deliveryPartner");
 
 const deliveryboyCreatedDB=async({name,phone,vehicleNo,isAvalable,slug})=>{
    const deliveryBoy=new DeliveryBoy({name,phone,vehicleNo,isAvalable,slug});
-   return await deliveryBoy.save();
+   return (await deliveryBoy.save()).populate("assignedOrders");
 }
 
 const getAllDeliveryBoyDB=async()=>{

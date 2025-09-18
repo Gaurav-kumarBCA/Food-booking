@@ -2,7 +2,7 @@ const { registerUserDB, finduserDB } = require("../../services/user/user.service
 const { generateToken } = require("../../utils");
 
 const register=async(req,res)=>{
-    const {name,email,password,phone}=req.body;
+    const {name,email,password,phone,role}=req.body;
     if(!name || !email || !password || !phone){
         return res.json({
             success:false,
@@ -10,7 +10,7 @@ const register=async(req,res)=>{
         });
     }
     try {
-        const user=await registerUserDB({name,email,password,phone});
+        const user=await registerUserDB({name,email,password,phone,role:role || "user"});
         return res.json({
             success:true,
             data:user,
@@ -52,7 +52,8 @@ const login=async(req,res)=>{
             id:user._id,
             name:user.name,
             email:user.email,
-        });``
+            role:user.role,
+        });
         return res.json({
             success:true,
             message:"user loggnied successfully",

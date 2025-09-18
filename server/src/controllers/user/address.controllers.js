@@ -1,16 +1,20 @@
 const { createAddressDB,getAllAddressDB, updateAddressByIDDB, deleteAddressByIDDB } = require("../../services/user/address.services");
 
 const createAddress= async(req,res)=>{
-try {
+
     const {address,city,state,pincode}=req.body;
     if(!address || !city || !state || !pincode){
     return res.json({
         success:false,
         error:"All fields are required",
         required:["address","city","state","pincode"],
-    })
+    });
 }
-    const data=await createAddressDB({address,city,state,pincode})
+
+    const userId=req.user.id;
+    req.body.user=userId;
+try {
+    const data=await createAddressDB(req.body)
     console.log(data);
     return res.json({
         success:true,
@@ -19,6 +23,7 @@ try {
     });
     
 } catch (error) {
+    console.log(error);
     return res.json({
         success:false,
         error:"somthing went wrong",
@@ -28,8 +33,9 @@ try {
 };
 
 const getAllAddress=async(req,res)=>{
+    const userId=req.user.id;
         try {
-            const data=await getAllAddressDB();
+            const data=await getAllAddressDB(userId);
         return res.json({
             success:true,
             data:data,
@@ -41,6 +47,7 @@ const getAllAddress=async(req,res)=>{
             });
         }
 };
+
 
 const updateAddressByID=async(req,res)=>{
         const {id}=req.params;
