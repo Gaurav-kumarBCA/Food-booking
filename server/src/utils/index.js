@@ -1,4 +1,5 @@
 const jwt=require("jsonwebtoken");
+const bcrypt=require("bcrypt");
 const generateSlug=(name)=>{
     return name.toLowerCase().trim().replace(/\s+/g, "-").replaceAll("|", "").replaceAll("&", "");
   };
@@ -13,7 +14,15 @@ const generateSlug=(name)=>{
     return jwt.verify(token,process.env.JWT_SECRET);
   }
 
-  module.exports={generateSlug,generateToken,verifyToken};
+  const hashpassword=(password)=>{
+    return bcrypt.hash(password,12);
+  };
+
+  const comparePassword=(password,hashpassword)=>{
+    return bcrypt.compare(password,hashpassword);
+
+  };
+  module.exports={generateSlug,generateToken,verifyToken, hashpassword,comparePassword};
 
 
   

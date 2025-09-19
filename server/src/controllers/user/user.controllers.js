@@ -1,5 +1,5 @@
 const { registerUserDB, finduserDB } = require("../../services/user/user.services");
-const { generateToken } = require("../../utils");
+const { generateToken, hashpassword, comparePassword } = require("../../utils");
 
 const register=async(req,res)=>{
     const {name,email,password,phone,role}=req.body;
@@ -10,7 +10,10 @@ const register=async(req,res)=>{
         });
     }
     try {
-        const user=await registerUserDB({name,email,password,phone,role:role || "user"});
+        const hashPswd=await hashpassword(password);
+        const user=await registerUserDB({name,email,password:hashPswd,phone,role:role || "user"});
+        user.password=undefined;
+        user._v=undefined;
         return res.json({
             success:true,
             data:user,
@@ -47,6 +50,15 @@ const login=async(req,res)=>{
                 error:"user does't exist!"
             })
         }
+
+        const isValid=await  comparePassword(password,user.password);
+        if(!isValid){
+            return res.json({
+                success:false,
+                error:"Wrong Password"
+            });
+        }
+        user.password=undefined;
 
         const {accessToken,refreshToken}= generateToken({
             id:user._id,
