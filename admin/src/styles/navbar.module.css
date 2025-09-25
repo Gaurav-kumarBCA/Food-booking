@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav{
+    height: 70px;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+}
+.cover{
+    position: absolute;
+}
+.logo{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: white;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name{
+    margin-left: 90px;
+    color: white;
+    font-family: "Merriweather", serif; 
+   font-weight: 1100; 
+   user-select: none; 
+}
+.input{
+    margin-left: 100px;
+    width: 400px;
+    height: 40px;
+    font-family: "Merriweather", serif; 
+   font-weight: 1100; 
+    border: none;
+    outline: none;
+    font-size: large;
+    border-radius: 10px;
+    background-color: rgb(247, 195, 195);
+
+
+}
+
+.input::placeholder{
+    color: red;
+    font-family: "Merriweather", serif; 
+    font-weight: 1100;
+    font-size: large;
+}
