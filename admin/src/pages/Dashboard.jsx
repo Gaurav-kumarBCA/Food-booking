@@ -3,8 +3,7 @@ import Layout from '../components/Layout'
 
 const Dashboard = () => {
   return (
-    <Layout>
-    {/* <div>Dashboard</div> */}
+    <Layout >
     </Layout>
   )
 }

@@ -3,9 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .nav{
     height: 70px;
-    width: 100%;
+    width: 100vw;
     background-color: red;
     display: flex;
     align-items: center;
@@ -51,4 +52,152 @@
     font-family: "Merriweather", serif; 
     font-weight: 1100;
     font-size: large;
+}
+.navbox{
+    height: 40px;
+    width: 650px;
+    /* border: 2px solid black; */
+    margin-left: 50px;
+    font-family: "Merriweather", serif; 
+    font-weight: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 50px;
+}
+.link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+.link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    transition: all ease-in  0.2s;
+    background-color:#fff;
+}
+.link:hover::after{
+    width: 100%;
+}
+.profile{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blanchedalmond;
+}
+
+/* Default styles (Desktop के लिए पहले से हैं) */
+
+/* Tablet view (screen width 1024px से कम पर) */
+@media (max-width: 1024px) {
+  .nav {
+    flex-wrap: wrap; 
+    padding: 10px;
+    height: auto; /* Height fix न रखें, content के हिसाब से adjust होगा */
+  }
+
+  .input {
+    width: 300px;
+    margin-left: 40px;
+  }
+
+  .navbox {
+    gap: 30px;
+    width: auto;
+    margin-left: 20px;
+  }
+}
+
+/* Mobile view (screen width 768px से कम पर) */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column; 
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .name {
+    margin-left: 0;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .input {
+    width: 100%; 
+    margin: 10px 0;
+  }
+
+  .navbox {
+    flex-direction: column; 
+    gap: 20px;
+    width: 100%;
+    margin: 10px 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .link {
+    font-size: 18px;
+  }
+
+  .profile {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Very small screens (like 480px) */
+@media (max-width: 480px) {
+  .name h1 {
+    font-size: 30px;
+    position: absolute;
+    margin-left: 60px;
+}
+.nav{
+    height: 120px;
+    width: 100vw;
+  
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+}
+.link{
+  display: none;
+}
+
+.input {
+    font-size: 14px;
+    height: 30px;
+    border-radius: -10px;
+    width: 100%;
+    margin-top: 60px;
+    
+}
+.input::placeholder{
+    font-size: small;
+}
+
+  .profile {
+    position: absolute;
+    margin-left: 420px;
+    top: 0%;
+  }
 }
