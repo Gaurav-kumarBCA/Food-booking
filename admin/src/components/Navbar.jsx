@@ -17,7 +17,7 @@ const Navbar = () => {
       {/* <NavLink className={style.addRestaurant} icon={Utensils} link="/restaurant" label="Restaurant"/> */}
       {/* <NavLink className={style.addBooking} icon={CookingPot} link="/booking" label="Booking"/> */}
       {/* <NavLink className={style.addUsers} icon={UserPen} link="/users" label="Users"/> */}
-      <NavLink className={style.addSigin} icon={User} link="/signin" label="Sign in"/>
+      <NavLink className={style.addSigin} icon={User} link="/signin" label="Sign Up"/>
       <NavLink className={style.addLogin} icon={LogIn} link="/login" label="Login"/>
     </div>
     <div className={style.profile}>
