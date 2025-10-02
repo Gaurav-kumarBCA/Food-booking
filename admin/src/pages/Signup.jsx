@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from "../styles/signin.module.css";
 
-const Signin = () => {
+const Signup = () => {
   const [Loading, setLoading] = useState(false);
   const [formState, setFormState] = useState({
     name: "",
@@ -93,4 +93,4 @@ const InputBox = ({ type, value, update, name }) => {
   );
 };
 
-export default Signin;
+export default Signup;

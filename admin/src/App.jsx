@@ -6,7 +6,7 @@ import Booking from "./pages/Booking";
 import Settings from "./pages/Settings";
 import User from "./pages/User";
 import Login from "./pages/login";
-import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
 
 const App = () => {
   return ( 
@@ -18,7 +18,7 @@ const App = () => {
     <Route path="/setting" element={<Settings/>}/>
     <Route path="/users" element={<User/>}/>
     <Route path="/login" element={<Login/>}/>
-    <Route path="/signin" element={<Signin/>}/> 
+    <Route path="/signin" element={<Signup/>}/> 
     
     </Routes>
 
