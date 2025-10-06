@@ -18,7 +18,7 @@ const restaurantSchema=new mongoose.Schema({
     rating:{type:Number,default:0},
 },
     {timestamps:true}
-) ;
+);
 
 const Restaurant = mongoose.model("Restaurant",restaurantSchema);
 

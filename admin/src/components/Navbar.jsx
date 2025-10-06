@@ -1,8 +1,7 @@
 import React from 'react'
 import style from "../styles/navbar.module.css"
 import { Link } from "react-router-dom"
-import { ChefHat, CookingPot, LogIn, User, UserPen, UserRound, Utensils } from "lucide-react"
-import {} from "lucide-react"
+import { ChefHat,LogIn, User,UserRound } from "lucide-react"
 const Navbar = () => {
   return (
     <div className={style.nav}>

@@ -8,8 +8,9 @@ const Layout = ({children}) => {
         <Navbar/>
         <div className={style.DesktopSideBar}>
           <DesktopSideBar/>
+          {children}
         </div>
-        <div className={style.Layout}>{children}</div>
+        {/* <div className={style.Layout}>{children}</div> */}
 
     </div>
   )

@@ -44,6 +44,12 @@ const getRestaurantById=async(req,res)=>{
     try {
         const {slug}=req.params;
         const data=await getRestaurantByIdDB(slug);
+        if(!data){
+            return res.json({
+                success:false,
+                error:"Restaurant not found"
+            });
+        }
         return res.json({
             success:true,
             data:data
@@ -52,7 +58,7 @@ const getRestaurantById=async(req,res)=>{
         console.log(error);
         return res.json({
             success:false,
-            error:"Restaurant not found"
+            error:"Falied to fatch restaurant"
         });
     }
 }
@@ -61,6 +67,9 @@ const getRestaurantById=async(req,res)=>{
 const updateRestaurant=async(req,res)=>{
     const {id}=req.params;
     const body=req.body;
+        if(body.name){
+        body.slug=generateSlug(body.name)
+    }
     try {
         const data=await updateRestaurantDB(id,body);
         if(!data){
