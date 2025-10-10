@@ -5,7 +5,6 @@ const foodItemsList=new mongoose.Schema({
     slug: { type: String, unique: true ,required:true},
     description:{type:String,required:true},
     price:{type:Number,required:true},
-    category:{type:String,enum:["veg","non-veg","beverage","dessert"]},
     restaurant:{type:mongoose.Schema.Types.ObjectId,ref:"Restaurant"},
     isAvailable:{type:Boolean,default:true},
     imageUrl:String,

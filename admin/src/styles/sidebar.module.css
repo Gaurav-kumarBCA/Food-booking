@@ -1,8 +1,8 @@
 body{
-    position: fixed;
+    /* position: fixed; */
 }
 .Sidebar{
-    height:690px;
+    height:652px;
     color: black;
     width: 250px;
     background-color: red;
@@ -23,7 +23,7 @@ body{
     user-select: none;   
 }
 .coverlink{
-    height: 430px;
+    height: 510px;
     border-radius: 10px;
     width: 180px;
     background-color: rgb(250, 188, 188);

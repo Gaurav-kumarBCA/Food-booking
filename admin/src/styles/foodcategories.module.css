@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    width: calc(100% - 250px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.container_hading{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Merriweather", serif; 
+   font-weight: 1100; 
+   user-select: none;
+} 
+table{
+   width: calc(100vw - 250px);
+   text-align: left;
+    margin-top: 20px;
+    border-collapse: collapse;
+    
+}
+th{
+    border: 2px solid black;
+    padding: 10px;
+}
+.td{
+    border: 2px solid black;
+    padding: 10px;
+}
+.funicon{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    
+}

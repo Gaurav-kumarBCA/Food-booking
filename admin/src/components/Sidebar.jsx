@@ -9,6 +9,7 @@ const Sidebar = () => {
         <div className={style.coverlink}>
             <SideLink  icon={Plus} link="/restaurant" lable="Add Restaurant"/>
             <SideLink  icon={Plus} link="/booking" lable="Add Food Item"/>
+            <SideLink  icon={Plus} link="/foodcategories" lable="FoodCategories"/>
             <SideLink  icon={Hamburger} link="/restaurant" lable="All Restaurant"/>
             <SideLink  icon={Truck} link="/restaurant" lable="Delivery Boy"/>
             <SideLink  icon={NotepadText} link="/restaurant" lable="All Orders"/>

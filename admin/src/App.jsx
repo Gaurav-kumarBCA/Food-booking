@@ -7,6 +7,7 @@ import Settings from "./pages/Settings";
 import User from "./pages/User";
 import Login from "./pages/login";
 import Signup from "./pages/Signup";
+import FoodCategories from "./pages/FoodCategories";
 
 const App = () => {
   return ( 
@@ -19,6 +20,7 @@ const App = () => {
     <Route path="/users" element={<User/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signin" element={<Signup/>}/> 
+    <Route path="/foodcategories" element={<FoodCategories/>}/>
     
     </Routes>
 

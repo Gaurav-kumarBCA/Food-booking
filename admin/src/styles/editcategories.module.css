@@ -1,0 +1,67 @@
+.editbtn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: rebeccapurple;
+
+}
+
+.edit_overlap{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(19, 19, 19,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.editform{
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  min-width: 300px;
+  text-align: center;
+  height: 210px;
+  width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.editdata{
+    display: flex;
+    margin-top: 30px;
+}
+.edit_inp{
+    width: 400px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-left: 9px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+} 
+.edit_btn{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.edit_btn button{
+    padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Merriweather", serif; 
+   font-weight: 1100;
+}
+.edit_btn button:first-child{
+    background-color: #ccc;
+}
+.edit_btn button:last-child{
+    background-color: red;
+    color: white;
+}
+
+

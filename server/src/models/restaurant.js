@@ -5,6 +5,7 @@ const restaurantSchema=new mongoose.Schema({
     slug: { type: String, unique: true ,required:true},
     owner:{type:mongoose.Schema.Types.ObjectId, ref:"User",required:true},
     email:String,
+    category:{type:mongoose.Schema.Types.ObjectId, ref:"FoodItemCategories",required:true},
     address:{
         line1:String,
         line2:String,

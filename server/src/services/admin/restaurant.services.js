@@ -1,8 +1,8 @@
 const Restaurant=require("../../models/restaurant");
 
 const createRestaurantDB=async(body)=>{
-    const newRestaurant=await new Restaurant(body);
-    return  newRestaurant.save()
+    const newRestaurant= new Restaurant(body);
+    return (await (await (await  newRestaurant.save()).populate("category")).populate("menu.foodList")).populate("owner")
 }
  
 const getAllRestaurantDB=async()=>{
