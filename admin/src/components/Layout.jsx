@@ -1,17 +1,20 @@
 import React from 'react'
-import Navbar from "../../src/components/Navbar"
+import Navbar from "../components/Navbar"
 import style from "../styles/layout.module.css"
 import DesktopSideBar from './DesktopSideBar'
+
 const Layout = ({children}) => {
   return (
-    <div>
-        <Navbar/>
-        <div className={style.DesktopSideBar}>
-          <DesktopSideBar/>
+    <div className={style.layoutContainer}>
+      <Navbar />
+      <div className={style.mainArea}>
+        <aside className={style.sidebar}>
+          <DesktopSideBar />
+        </aside>
+        <main className={style.contentArea}>
           {children}
-        </div>
-        {/* <div className={style.Layout}>{children}</div> */}
-
+        </main>
+      </div>
     </div>
   )
 }

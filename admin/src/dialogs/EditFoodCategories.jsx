@@ -36,7 +36,7 @@ const Dialog = ({ onClose,id,edit,name }) => {
       }
       const n=resdata.data.name;
       const s=resdata .data.slug;
-      edit(n,s,id)
+      edit(id,n,s)
       onClose()
     } catch (error) {
       console.log(error);

@@ -6,6 +6,7 @@ const foodItemsList=new mongoose.Schema({
     description:{type:String,required:true},
     price:{type:Number,required:true},
     restaurant:{type:mongoose.Schema.Types.ObjectId,ref:"Restaurant"},
+    foodcategories:{type:mongoose.Schema.Types.ObjectId,ref:"FoodItemCategories"},
     isAvailable:{type:Boolean,default:true},
     imageUrl:String,
 },{timestamps:true});

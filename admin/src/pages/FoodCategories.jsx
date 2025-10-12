@@ -72,7 +72,7 @@ const FoodCategories = () => {
                 <tr key={item._id}>
                   <td className={style.td}>{item.name}</td>
                   <td className={style.td}>{item.slug}</td>
-                  <td className={style.td}>{item.slug}</td>
+                  <td className={style.td}>{item.total || 0}</td>
                   <td className={style.td}>
                    <div className={style.funicon}>
                     <EditFoodCategories id={item._id} name={item.name} edit={editFoodCategories} />  

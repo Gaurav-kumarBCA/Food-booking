@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: relative;
 }
 .btn{
     background:none;
@@ -16,16 +17,18 @@
     color: aliceblue;
     text-decoration: none;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
+    
 }
 .dialog{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color:rgba(17, 17, 17,0.9);
+    /* background-color: red; */
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;

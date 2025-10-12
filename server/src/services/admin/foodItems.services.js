@@ -6,11 +6,11 @@ const createFoodListDB=async(body)=>{
 }
 
 const getAllFoodListDB=async()=>{
-    return await FoodItems.find();
+    return await FoodItems.find().populate("foodcategories");
 }
 
 const getFoodListByIdDB=async(slug)=>{
-    return await FoodItems.findOne({slug:slug});
+    return await FoodItems.findOne({slug:slug}).populate("foodcategories");
 }
 
 const updateFoodListDB=async(id,body)=>{
