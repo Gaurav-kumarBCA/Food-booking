@@ -8,7 +8,7 @@ const Sidebar = () => {
         <div className={style.admin}><h1>Hi,Admin</h1></div>
         <div className={style.coverlink}>
             <SideLink  icon={Plus} link="/restaurant" lable="Add Restaurant"/>
-            <SideLink  icon={Plus} link="/booking" lable="Add Food Item"/>
+            <SideLink  icon={Plus} link="/fooditems" lable="Add Food Item"/>
             <SideLink  icon={Plus} link="/foodcategories" lable="FoodCategories"/>
             <SideLink  icon={Hamburger} link="/restaurant" lable="All Restaurant"/>
             <SideLink  icon={Truck} link="/restaurant" lable="Delivery Boy"/>

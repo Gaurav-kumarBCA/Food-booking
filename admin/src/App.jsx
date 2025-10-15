@@ -8,6 +8,7 @@ import User from "./pages/User";
 import Login from "./pages/login";
 import Signup from "./pages/Signup";
 import FoodCategories from "./pages/FoodCategories";
+import FoodItems from "./pages/FoodItems";
 
 const App = () => {
   return ( 
@@ -21,6 +22,7 @@ const App = () => {
     <Route path="/login" element={<Login/>}/>
     <Route path="/signin" element={<Signup/>}/> 
     <Route path="/foodcategories" element={<FoodCategories/>}/>
+    <Route path="/fooditems" element={<FoodItems/>}/>
     
     </Routes>
 

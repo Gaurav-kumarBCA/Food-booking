@@ -9,7 +9,7 @@ const AddFoodCategories = ({ add }) => {
     }
     return (
         <div onClick={() => { setOpen(true) }} className={style.button_container}>
-            <button onClick={() => { setOpen(true) }} className={style.btn}>Add Categories</button>
+            <button onClick={() => { setOpen(true) }} className={style.btn}>ADD CATEGORIES</button>
             <Dialog open={open} onClose={onClose} add={add} />
         </div>
     )
