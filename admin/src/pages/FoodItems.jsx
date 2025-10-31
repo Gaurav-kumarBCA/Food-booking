@@ -83,7 +83,7 @@ const FoodItems = () => {
                         <td className={style.td}>{items.name || "-"}</td>
                         <td className={style.td}>{items.description || "-"}</td>
                         <td className={style.td}>{items.price || 0}</td>
-                        <td className={style.td}>{items.foodcategory?.name || "-"}</td>
+                        <td className={style.td}>{items.foodcategories?.name || "-"}</td>
                         <td className={style.td} style={{color:items.isAvailable ? "green":"red"}}>{items.isAvailable ?"Yes":"No"}</td>
                         <td className={style.td}>
                             <div className={style.food_icon}>

@@ -13,7 +13,7 @@ const Signup = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (!formState.name || !formState.email || !formState.phone || !formState.password || !formState.role) {
+    if (!formState.name || !formState.email || !formState.phone || !formState.password ) {
       return alert("All fields are required");
     }
 

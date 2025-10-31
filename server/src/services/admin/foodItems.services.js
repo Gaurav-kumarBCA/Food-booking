@@ -2,7 +2,7 @@ const FoodItems=require("../../models/foodItems")
 
 const createFoodListDB=async(body)=>{
     const foodList=new FoodItems(body);
-    return await foodList.save();
+    return (await foodList.save()).populate("foodcategories");
 }
 
 const getAllFoodListDB=async()=>{

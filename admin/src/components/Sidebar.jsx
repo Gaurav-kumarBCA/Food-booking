@@ -1,12 +1,13 @@
 import React from 'react'
 import style from "../styles/sidebar.module.css"
 import { Link } from 'react-router-dom'
-import { CreditCard, Hamburger, NotepadText, Plus, Settings, Truck } from 'lucide-react'
+import { CreditCard, Hamburger, House, NotepadText, Plus, Settings, Truck } from 'lucide-react'
 const Sidebar = () => {
   return (
     <div className={style.Sidebar}>
         <div className={style.admin}><h1>Hi,Admin</h1></div>
         <div className={style.coverlink}>
+            <SideLink  icon={House} link="/" lable="Home"/>
             <SideLink  icon={Plus} link="/restaurant" lable="Add Restaurant"/>
             <SideLink  icon={Plus} link="/fooditems" lable="Add Food Item"/>
             <SideLink  icon={Plus} link="/foodcategories" lable="FoodCategories"/>

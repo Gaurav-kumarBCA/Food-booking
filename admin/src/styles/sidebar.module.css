@@ -23,7 +23,7 @@ body{
     user-select: none;   
 }
 .coverlink{
-    height: 510px;
+    height: 560px;
     border-radius: 10px;
     width: 180px;
     background-color: rgb(250, 188, 188);
@@ -31,17 +31,20 @@ body{
     margin-top: 9px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 .Icon{
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
     margin-bottom: 19px;
     color:rgb(75, 3, 3);
     font-family: "Merriweather", serif; 
     font-weight: 1100; 
-    
 }
 
+.Icon:hover{
+    background-color: rgb(255, 215, 215);
+}

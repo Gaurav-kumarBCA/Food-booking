@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Signup from "./pages/Signup";
 import FoodCategories from "./pages/FoodCategories";
 import FoodItems from "./pages/FoodItems";
+import style from "./styles/error.module.css"
 
 const App = () => {
   return ( 
@@ -23,6 +24,7 @@ const App = () => {
     <Route path="/signin" element={<Signup/>}/> 
     <Route path="/foodcategories" element={<FoodCategories/>}/>
     <Route path="/fooditems" element={<FoodItems/>}/>
+    <Route path="*" element={<div className={style.error}><h1 className={style.h1}>401 not found</h1></div>}/>
     
     </Routes>
 

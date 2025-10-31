@@ -3,3 +3,79 @@
     background:none;
     cursor: pointer;
 }
+.edit_back_drop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(39, 38, 38,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit_food_form{
+    height: 500px;
+    width: 600px;
+    background-color: white;
+
+}
+
+.edit_food_hading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    /* background-color: blue; */
+}
+
+.edit_food_hading :last-child{
+    height: 20px;
+    width: 40px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.edit_form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+
+.edit_inp{
+
+ padding:10px 0px;   
+}
+.label_name{
+    margin-right:518px ;
+}
+
+.edit_btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.edit_btn button{
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Merriweather", serif; 
+  font-weight: 1100;
+}
+
+.edit_btn :first-child{
+    background-color: #ccc;
+}
+
+.edit_btn :last-child{
+    background-color: red;
+    color: white;
+}
