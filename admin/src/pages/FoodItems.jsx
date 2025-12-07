@@ -10,13 +10,11 @@ import DeleteFoodItems from '../dialogs/DeleteFoodItems';
 
 const FoodItems = () => {
     const [data,setData]=useState([]);
-    const [foodCategories,setFoodCategories]=useState([]);
+    const [foodCategory,setFoodCategory]=useState([]);
     const addfooditems=(newAddfooditems)=>{
-        // setData([...data,{...newAddfooditems,foodcategory:foodCategories.find((fc)=>fc._id === newAddfooditems.foodcategory)}]);
-        const categoryFood=foodCategories.find(fc=>fc._id === newAddfooditems.foodcategory);
-        setData([...data,{...newAddfooditems,foodcategory:categoryFood}]);
+        const categoryFood=foodCategory.find(fc=>fc._id === newAddfooditems.foodcategories);
+        setData([...data,{...newAddfooditems,foodcategories:categoryFood}]);
     };
-
     const deletefooditem=(id)=>{
         setData(data.filter((item)=>item._id !== id));
     }
@@ -52,7 +50,7 @@ const FoodItems = () => {
                     if(!data2.success){
                         return alert(data2.error)
                     }
-                    setFoodCategories(data2.data);
+                    setFoodCategory(data2.data);
             } catch (error) {
                 console.log(error);
             }
@@ -64,7 +62,7 @@ const FoodItems = () => {
      <div className={style.fooditembody}>
         <div className={style.food_hading}>
             <h1>Food List</h1>
-            <AddFoodItems foodCategories={foodCategories}  addfooditems={addfooditems}/>
+            <AddFoodItems foodCategory={foodCategory}  addfooditems={addfooditems}/>
         </div>
         <table>
             <thead>
@@ -87,7 +85,7 @@ const FoodItems = () => {
                         <td className={style.td} style={{color:items.isAvailable ? "green":"red"}}>{items.isAvailable ?"Yes":"No"}</td>
                         <td className={style.td}>
                             <div className={style.food_icon}>
-                                <EditFoodItems/>
+                                <EditFoodItems  />
                                 <DeleteFoodItems id={items._id} removefood={deletefooditem}/>
                             </div>
                             </td>

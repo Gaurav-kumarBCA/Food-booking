@@ -1,86 +1,91 @@
-import { Pencil } from 'lucide-react'
-import React from 'react'
-import style from "../styles/editfooditems.module.css"
-import { useState } from 'react'
+import { Pencil } from "lucide-react";
+import React, { useState } from "react";
+import style from "../styles/editfooditems.module.css";
 
 const EditFoodItems = () => {
-  const [open,setOpen]=useState(false)
-  const onClose=()=>{
-    setOpen(false);
-  }
+  const [open, setOpen] = useState(false);
+
   return (
     <div>
-        <button onClick={()=>setOpen(true)} className={style.food_item_btn}><Pencil/></button>
-        {open && <Editfooditems onClose={onClose}/>}
+      <button
+        onClick={() => setOpen(true)}
+        className={style.food_item_btn}
+      >
+        <Pencil />
+      </button>
+
+      {open && <EditForm onClose={() => setOpen(false)} />}
     </div>
-  )
-}
+  );
+};
 
-const Editfooditems=({onClose})=>{
-const [form,setFormState]=useState({})
-  const editfooditems=async()=>{
-    try {
-      const url=import.meta.env.VITE_SERVER_VITE;
-      const res=await fetch(`${url}/admin/fooditems/${id}`,{
-        method:"PUT",
-        headers:{
-          "Content-Type":"application/json",
-          Authorization:`Bearer ${localStorage.getItem("token")}`
-        },
-        body:JSON.stringify(form),
-      });
-      const data=res.json();
-      console.log(data);
-      if(!data.success){
-        alert(data.error);
-        return
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  return(
+const EditForm = ({ onClose }) => {
+  return (
     <div className={style.edit_back_drop}>
-      <div className={style.edit_food_form}>
-        <div className={style.edit_food_hading}>
-        <h1>Edit Food Item</h1>
-        <button onClick={onClose}>X</button>
-        </div>
+      <div className={style.edit_container}>
 
-        <div className={style.edit_form}>
-                   <label className={style.label_name}>Food Name</label>
-                   <input className={style.edit_inp}  type="text" placeholder='Enter Food name'/>
-                   </div>
+        <h2>Edit Food Item</h2>
 
-                    <div className={style.edit_form}>
-                   <label className={style.label_name}>Food Name</label>
-                   <input className={style.edit_inp}  type="text" placeholder='Enter Food name'/>
-                   </div>
+        <form className={style.edit_form}>
+          <label>Food Name</label>
+          <input type="text" placeholder="Enter food name" />
 
-                    <div className={style.edit_form}>
-                   <label className={style.label_name}>Food Name</label>
-                   <input className={style.edit_inp}  type="text" placeholder='Enter Food name'/>
-                   </div>
+          <label>Description</label>
+          <input type="text" placeholder="Enter food name" />
 
-                    <div className={style.edit_form}>
-                   <label className={style.label_name}>Food Name</label>
-                   <input className={style.edit_inp}  type="text" placeholder='Enter Food name'/>
-                   </div>
+          <label>Price</label>
+          <input type="number" placeholder="Enter price" />
 
-                    <div className={style.edit_form}>
-                   <label className={style.label_name}>Food Name</label>
-                   <input className={style.edit_inp}  type="text" placeholder='Enter Food name'/>
-                   </div>
+          <label>Food Category</label>
+          <input type="text" placeholder="Enter category" />
 
-                   
-                   <div className={style.edit_btn}>
-                    <button onClick={onClose}>Cancle</button>
-                    <button onClick={editfooditems}>Update</button>
-                   </div>
+          <label>Is Available</label>
+          <input type="text" placeholder="Enter food name" />
+
+          <div className={style.btn_group}>
+            <button type="button" onClick={onClose} className={style.cancel_btn}>
+              Cancel
+            </button>
+            <button type="submit" className={style.save_btn}>
+              Save
+            </button>
+          </div>
+        </form>
 
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EditFoodItems
+export default EditFoodItems;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

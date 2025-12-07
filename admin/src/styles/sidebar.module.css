@@ -1,13 +1,8 @@
-body{
-    /* position: fixed; */
-}
 .Sidebar{
     height:652px;
     color: black;
     width: 250px;
     background-color: red;
-    
-
 }
 .admin{
     display: flex;
