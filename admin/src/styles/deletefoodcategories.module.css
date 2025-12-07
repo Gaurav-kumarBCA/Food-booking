@@ -59,4 +59,10 @@
   border: none;
   color: red;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteicon:hover{
+   color: #ff6b6b;
+    transform: scale(1.2);
 }

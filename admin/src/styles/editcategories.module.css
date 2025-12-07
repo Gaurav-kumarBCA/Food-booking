@@ -1,67 +1,122 @@
-.editbtn{
+.editbtn {
     border: none;
     background: none;
     cursor: pointer;
     color: black;
-
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
-.edit_overlap{
+.editbtn:hover {
+    color: #ff6b6b;
+    transform: scale(1.2);
+}
+
+.edit_overlap {
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
     bottom: 0;
-    background-color: rgba(19, 19, 19,0.8);
+    background-color: rgba(0,0,0,0.6);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 9999;
 }
-.editform{
-  background: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  min-width: 300px;
-  text-align: center;
-  height: 210px;
-  width: 400px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+.editform {
+    width: 400px;
+    padding: 25px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.editdata{
-    display: flex;
-    margin-top: 30px;
-}
-.edit_inp{
-    width: 400px;
-    height: 30px;
+.close_btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff6b6b;
     border: none;
+    color: white;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close_btn:hover {
+    background-color: #ff4757;
+    transform: scale(1.1);
+}
+
+.ahading {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.editdata {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.edit_inp {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
     outline: none;
-    margin-left: 9px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-} 
-.edit_btn{
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.edit_inp:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 5px rgba(255,107,107,0.5);
+}
+
+.edit_btn {
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+    width: 100%;
 }
 
-.edit_btn button{
-    padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-family: "Merriweather", serif; 
-   font-weight: 1100;
+.edit_btn button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    font-family: "Merriweather", serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.edit_btn button:first-child{
+
+.edit_btn button:first-child {
     background-color: #ccc;
+    color: #333;
 }
-.edit_btn button:last-child{
-    background-color: red;
+
+.edit_btn button:first-child:hover {
+    background-color: #b3b3b3;
+}
+
+.edit_btn button:last-child {
+    background-color: #ff6b6b;
     color: white;
 }
 
-
+.edit_btn button:last-child:hover {
+    background-color: #ff4757;
+    transform: scale(1.05);
+}
