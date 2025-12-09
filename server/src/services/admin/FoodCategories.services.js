@@ -1,5 +1,3 @@
-// const FoodItemCategories=require("../../models/foodCatrgories");
-
 const FoodItemCategories = require("../../models/foodCatrgories");
 const FoodItems = require("../../models/foodItems");
 
@@ -19,7 +17,6 @@ const getAllFoodCategoriesDB=async()=>{
     );
     return foodCategoriesWithTotal;
 };
-
 
 const getSlugFoodCategoriesDB=async(slug)=>{
 return await FoodItemCategories.findOne({slug});

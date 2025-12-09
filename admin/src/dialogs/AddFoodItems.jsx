@@ -53,7 +53,7 @@ const Dialog = ({ onClose, addfooditems, foodCategory }) => {
             <div className={style.food_form}>
                 <div className={style.form_hading_food}>
                     <h2>Add New Food Item</h2>
-                    <button onClick={onClose} className={style.close_btn}>×</button>
+                    <button onClick={onClose} className={style.close_btn}>x</button>
                 </div>
 
                 <div className={style.food_name_form}>

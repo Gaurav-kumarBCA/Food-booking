@@ -34,6 +34,7 @@ const Dialog = ({ add, onClose }) => {
                 body: JSON.stringify({ name: input.trim() }),
             });
             const data = await res.json();
+            console.log(data);
             if (!data.success) {
                 alert(data.error);
                 return;
