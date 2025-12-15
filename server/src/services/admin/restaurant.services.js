@@ -9,7 +9,9 @@ const getAllRestaurantDB=async()=>{
     return await Restaurant.find().populate({
         path:"owner",
         select:"name email phone"
-    });
+    }).populate("category").populate({
+        path:"menu.foodList"
+    });;
 
 }
 
